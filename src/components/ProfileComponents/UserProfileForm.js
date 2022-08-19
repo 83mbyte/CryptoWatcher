@@ -7,7 +7,7 @@ import { updateProfile } from '../../redux/reducers/userDataSlice';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 import ExpandablePaper from '../../wrappers/ExpandablePaper';
-import GreySeparator from '../GreySeparator/GreySeparator';
+import GreySeparator from '../Separators/GreySeparator';
 import SubmitBtn from '../Buttons/SubmitBtn';
 import UserSexCheckBox from './UserSexCheckBox';
 

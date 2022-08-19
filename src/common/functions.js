@@ -8,6 +8,24 @@ export const getCoinsData = async (url) => {
     }
 
 }
+export const satoshiToBtc = (value) => {
+    let satoshi = 1 / 100000000;
+    let result = Number(value) * satoshi;
+    return parseFloat(result);
+}
+
+export const getWalletInfo = async (url, walletId) => {
+    let resp = await fetch(`${url}${walletId}`);
+
+    if (resp.status === 200) {
+        resp = await resp.json();
+        let balance = satoshiToBtc(resp.balance)
+        return { balance, tx: resp.txrefs }
+    } else {
+        return { balance: null, tx: null }
+    }
+
+}
 
 const fetching = {
     getCoinsData: async (url) => {

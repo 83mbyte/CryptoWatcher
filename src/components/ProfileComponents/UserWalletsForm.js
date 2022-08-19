@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ExpandablePaper from '../../wrappers/ExpandablePaper';
 
 import { updateWallets } from '../../redux/reducers/userDataSlice';
-import GreySeparator from '../GreySeparator/GreySeparator';
+import GreySeparator from '../Separators/GreySeparator';
 import SubmitBtn from '../Buttons/SubmitBtn';
 
 const UserWalletsForm = ({ wallets }) => {
