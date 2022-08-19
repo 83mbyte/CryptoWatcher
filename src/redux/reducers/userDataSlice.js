@@ -5,7 +5,7 @@ const initialState = {
         name: 'Name Surname jr.',
         email: 'emailaddress@example.com',
         address: 'USA, Brooklyn, NY',
-        sex: 'male',
+        sex: 'female',
     },
     wallets: {
         bitcoin: '3AX1RcxeZP39MzPJVXB8JwP2dk8R2RSLsg',

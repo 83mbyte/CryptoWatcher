@@ -22,8 +22,13 @@ export const coinsDataSlice = createSlice({
             })
             state.coins = action.payload;
         },
+        refresh: (state, action) => {
+            console.log('..REDUCER refresh');
+
+            state.coins = action.payload;
+        }
     }
 })
 
-export const { initData } = coinsDataSlice.actions;
+export const { initData, refresh } = coinsDataSlice.actions;
 export default coinsDataSlice.reducer;
