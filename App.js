@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, } from 'react-native';
 
 //redux data..
 import { Provider, useDispatch } from 'react-redux';
@@ -9,9 +9,8 @@ import { coinsApiUrl, cryptoIdsArray2 } from './src/common/defaults';
 import { getCoinsData } from './src/common/functions';
 import store from './src/redux/store';
 import ProfileScreen from './src/screens/ProfileScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
-//tmp data
-//import InitApp from './src/tmp/InitApp';
 
 export default function App() {
 
@@ -48,8 +47,8 @@ const InitAppComponent = () => {
   return (
 
 
-    <ProfileScreen />
-
+    //<ProfileScreen />   //unblock to see the ProfileScreen until routes/navigation setted..
+    <HomeScreen />
 
   )
 }
