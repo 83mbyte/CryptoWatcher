@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 //redux data..
 import { Provider, useDispatch } from 'react-redux';
 import { initData } from './src/redux/reducers/coinsDataSlice';
-import { coinsApiUrl, cryptoIdsArray2 } from './src/common/defaults';
+import { mainURL } from './src/common/defaults';
 import { getCoinsData } from './src/common/functions';
 import store from './src/redux/store';
 
@@ -24,7 +24,7 @@ export default function App() {
 
 const InitAppComponent = () => {
   const dispatch = useDispatch();
-  const URL = `${coinsApiUrl}=${cryptoIdsArray2.join(',')}`;
+  //const URL = `${coinsApiUrl}=${cryptoIdsArray.join(',')}`;
 
   React.useEffect(() => {
     const loadCoinsData = async (url) => {
@@ -34,7 +34,7 @@ const InitAppComponent = () => {
         dispatch(initData(respond));
       }
     }
-    loadCoinsData(URL)
+    loadCoinsData(mainURL)
 
   }, []);
 

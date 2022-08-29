@@ -121,6 +121,7 @@ export const coinsApiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_cu
 export const walletApiUrl = 'https://api.blockcypher.com/v1/btc/main/addrs/';
 export const coinInfoUrl = 'https://api.coingecko.com/api/v3/coins/';
 
+export const mainURL = `${coinsApiUrl}=${cryptoIdsArray.join(',')}`;
 // alternative URL to API to get wallet/address info
 //const alternativeWalletInfo = 'https://blockchain.info/rawaddr/${walletId}?format=json&limit=10'
 
