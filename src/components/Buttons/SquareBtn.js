@@ -1,16 +1,17 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Ionicons } from '@expo/vector-icons';
 
 const SquareBtn = ({ icon, color, pathTo, text, onPressFnc }) => {
-
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.btnArea} onPress={
                 () =>
                     pathTo
-                        ? null // possible will be as navigation.navigate(pathTo)
+                        ? navigation.navigate(pathTo)
                         : onPressFnc
                             ? onPressFnc()
                             : alert('under construction..')}

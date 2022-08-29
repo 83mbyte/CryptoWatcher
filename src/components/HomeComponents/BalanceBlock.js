@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
 
-import { avatars, coinsApiUrl, cryptoIdsArray } from '../../common/defaults';
+import { avatars, mainURL } from '../../common/defaults';
 import { getCoinsData } from '../../common/functions';
 import SquareBtn from '../Buttons/SquareBtn';
 
@@ -12,8 +12,7 @@ const BalanceBlock = ({ currentBalance, userAvatar }) => {
     const dispatch = useDispatch();
     const refreshData = async () => {
 
-        const URL = `${coinsApiUrl}=${cryptoIdsArray.join(',')}`;
-        let respond = await getCoinsData(URL);
+        let respond = await getCoinsData(mainURL);
         if (respond && respond !== 'Error') {
             dispatch(refresh(respond));
         }
@@ -26,7 +25,7 @@ const BalanceBlock = ({ currentBalance, userAvatar }) => {
 
                 <Text style={styles.balanceTextTitle}>Total Balance</Text>
                 <View style={styles.accountBtnsRow}>
-                    <SquareBtn icon={'list'} color={'#27456e'} text={'List'} pathTo={'List'} />
+                    <SquareBtn icon={'list'} color={'#27456e'} text={'List'} pathTo={'CoinsList'} />
                     <SquareBtn icon={'search-outline'} color={'#27456e'} text={'ATM'} />
                     <SquareBtn icon={'wallet-outline'} color={'#27456e'} text={'Wallet'} />
                     <SquareBtn icon={'md-refresh-outline'} color={'#27456e'} text={'Refresh'} onPressFnc={refreshData} />
